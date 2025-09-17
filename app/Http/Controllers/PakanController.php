@@ -22,7 +22,11 @@ class PakanController extends Controller
      */
     public function create()
     {
-        return view('pakan.create');
+            // Ambil semua data jenis pakan
+        $jenis_pakans = JenisPakan::all();
+
+        // Kirim data ke view
+        return view('pakan.create', compact('jenis_pakans'));
     }
 
     /**
